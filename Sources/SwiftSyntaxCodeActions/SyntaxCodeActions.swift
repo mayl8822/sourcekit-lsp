@@ -20,11 +20,14 @@ package let allSyntaxCodeActions: [any SyntaxCodeActionProvider.Type] = {
     AddExplicitEnumRawValues.self,
     AddSeparatorsToIntegerLiteral.self,
     ApplyDeMorganLaw.self,
+    ConvertCommentToDocComment.self,
+    ConvertCommentToDocComment.self,
     ConvertComputedPropertyToStored.self,
     ConvertComputedPropertyToZeroParameterFunction.self,
     ConvertIfLetToGuard.self,
     ConvertIntegerLiteral.self,
     ConvertJSONToCodableStruct.self,
+    ConvertStoredPropertyToComputed.self,
     ConvertStringConcatenationToStringInterpolation.self,
     ConvertZeroParameterFunctionToComputedProperty.self,
     FormatRawStringLiteral.self,
@@ -34,7 +37,6 @@ package let allSyntaxCodeActions: [any SyntaxCodeActionProvider.Type] = {
     OpaqueParameterToGeneric.self,
     RemoveRedundantParentheses.self,
     RemoveSeparatorsFromIntegerLiteral.self,
-    ConvertCommentToDocComment.self,
     SwapBinaryOperands.self,
   ]
   #if !NO_SWIFTPM_DEPENDENCY
