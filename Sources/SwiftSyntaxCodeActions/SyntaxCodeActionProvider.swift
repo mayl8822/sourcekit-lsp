@@ -69,7 +69,7 @@ extension SyntaxCodeActionProvider {
     unresolvedData: LSPAny,
     symbolInfo: (_ position: Position) async throws -> [SymbolDetails]
   ) async throws -> CodeAction {
-    throw ResponseError.internalError("Resolve not implemented for '\(Self.self)'")
+    return codeAction
   }
 }
 

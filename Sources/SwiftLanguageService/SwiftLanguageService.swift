@@ -1011,7 +1011,7 @@ extension SwiftLanguageService {
     else {
       return []
     }
-    return await allSyntaxCodeActions.concurrentMap { provider in
+    return await allSyntaxCodeActionProviders.concurrentMap { provider in
       return provider.codeActions(in: scope)
     }.flatMap { $0 }
   }
@@ -1021,7 +1021,7 @@ extension SwiftLanguageService {
       // We don't have any data to resolve the code action.
       return req.codeAction
     }
-    guard let provider = allSyntaxCodeActions.filter({ "\($0)" == data.action }).only else {
+    guard let provider = allSyntaxCodeActionProviders.filter({ "\($0)" == data.action }).only else {
       throw ResponseError.unknown("Could not find syntax action '\(data.action)' to resolve code action")
     }
     let snapshot = try documentManager.latestSnapshot(data.document.uri)

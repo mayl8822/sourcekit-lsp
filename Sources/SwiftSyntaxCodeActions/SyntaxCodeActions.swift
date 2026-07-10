@@ -14,7 +14,7 @@ import SwiftRefactor
 
 /// List of all of the syntactic code action providers, which can be used
 /// to produce code actions using only the swift-syntax tree of a file.
-package let allSyntaxCodeActions: [any SyntaxCodeActionProvider.Type] = {
+package let allSyntaxCodeActionProviders: [any SyntaxCodeActionProvider.Type] = {
   var result: [any SyntaxCodeActionProvider.Type] = [
     AddDocumentation.self,
     AddExplicitEnumRawValues.self,
